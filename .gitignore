@@ -82,3 +82,4 @@ fabric.properties
 /mygittest.iml
 /.idea/vcs.xml
 .idea
+/target/
