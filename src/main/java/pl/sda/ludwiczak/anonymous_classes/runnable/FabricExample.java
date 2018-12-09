@@ -12,11 +12,42 @@ public class FabricExample {
     }
 
 
-    private static Runnable makeNewRunnable() {
+
+//    private static Runnable makeNewRunnable() { // metoda fabryczna bo zwraca jakiś typ, a static bo chcemy miec mozliwosc zawsze ja wywolac
+//        return new Runnable() {
+//            private String name = "Aneta";
+//            @Override
+//            public void run() {
+//                System.out.println("my name is: " + this.name);
+//            }
+//        };
+//    }
+
+
+private static Runnable makeRunnableWithLambda() {
+        return () -> {
+            String name = "Lidia";
+            System.out.println("My name is: " + name); // gdybysmy tu dali "this.name" zamiast name to byloby odniesienie do klasy
+        };
+}
+
+//    Runnable five = new Runnable() {
+//        private String name = "Lidia";
+//        @Override
+//        public void run() {
+//            System.out.println("ny name is: " + this.name);
+//        }
+//    };
+
+
+
+
+    private static Runnable makeNewRunnable() { // metoda fabryczna bo zwraca jakiś typ, a static bo chcemy miec mozliwosc zawsze ja wywolac
         return new Runnable() {
             private String name = "Aneta";
             @Override
             public void run() {
+                String name = "Piotrek";
                 System.out.println("my name is: " + this.name);
             }
         };
