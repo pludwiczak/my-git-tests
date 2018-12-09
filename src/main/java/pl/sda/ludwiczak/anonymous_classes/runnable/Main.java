@@ -26,7 +26,6 @@ public class Main {
         runnable.run();
         processRunnable(runnable);
 
-
         // klasa anonimowa - przekazana jako parametr
         processRunnable(new Runnable() {
             @Override
@@ -35,14 +34,11 @@ public class Main {
             }
         });
 
-
 // lambda z zachowaniem referencji
         Runnable runnableLambda = () -> System.out.println("my runnable lambda");
         processRunnable(runnableLambda);
 // lambda
         processRunnable(() -> System.out.println("lambda"));
-
-
 
 
 // zwyczajnie
