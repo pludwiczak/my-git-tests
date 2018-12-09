@@ -1,7 +1,5 @@
 package pl.sda.ludwiczak.generic.method;
 
-// 3 parametry
-// 2 tego samego typu
 
 public class Person {
 
@@ -9,23 +7,29 @@ public class Person {
     private String surname;
     private Integer age;
 
-//    private void validate(String, String, Integer)
-
-
-    private <T> T validate(T value) { // <T> tu jest cos generycznego, T - ta metoda niech zwraca T, (T value) niech zwraca T
-        if (null == value) {
-            throw new IllegalArgumentException("Value cannot be null!");
+// 3 parametry
+// 2 tego samego typu
+    private <T, C> void validate(T a, T b, C c) {
+        if (null == a) {
+            throw new IllegalArgumentException("Cannot be null");
         }
-        return value;
+
+        if (null == b) {
+            throw new IllegalArgumentException("Cannot be null");
+        }
+
+        if (null == c) {
+            throw new IllegalArgumentException("Cannot be null");
+        }
+
     }
 
-
-
-
     public Person(String name, String surname, Integer age) {
-        this.name = validate(name);
-        this.surname = validate(surname);
-        this.age = validate(age);
+        validate(name,surname,age);
+
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
     }
 
 
@@ -35,7 +39,7 @@ public class Person {
     }
 
     public void setName(String name) {
-        this.name = validate(name);
+        this.name = name;
     }
 
     public String getSurname() {
@@ -43,7 +47,7 @@ public class Person {
     }
 
     public void setSurname(String surname) {
-        this.surname = validate(surname);
+        this.surname = surname;
     }
 
     public Integer getAge() {
@@ -51,7 +55,7 @@ public class Person {
     }
 
     public void setAge(Integer age) {
-        this.age = validate(age);
+        this.age = age;
     }
 
 
