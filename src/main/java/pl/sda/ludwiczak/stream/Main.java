@@ -40,14 +40,13 @@ public class Main {
                 .collect(Collectors.toList());
     }
 
+        private static List<Country> genericFilter(List<Country> countries, Predicate<Country> predicate) {
+        return countries.stream().
+                filter(predicate).
+                collect(Collectors.toList());
+        }
 
 
-
-    private static List<Country> genericFilter(List<Country> countries, Predicate<Country> predicate) {
-        return countries.stream()
-                .filter(predicate)
-                .collect(Collectors.toList());
-    }
 
 
 

@@ -71,6 +71,7 @@ public class Box {
 
 
 
+
     private String validateString(String string) {
         if (null == string) {
             throw new IllegalArgumentException("String cannot be null!");

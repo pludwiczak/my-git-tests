@@ -25,13 +25,15 @@ public class Main3 {
     }
 
 
-    private static void displaying(House house) {
+
+private static void displaying(House house) {
         Optional.ofNullable(house)
                 .map(house1 -> house1.getBathroom())
                 .map(bathroom -> bathroom.getSink())
                 .map(sink -> sink.getLabel())
                 .ifPresent(s -> System.out.println("label: " + s));
-    }
+}
+
 
     private static void displayingShorter(House house) {
         Optional.ofNullable(house)
