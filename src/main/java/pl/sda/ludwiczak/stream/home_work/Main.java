@@ -27,8 +27,12 @@ public class Main {
         productList.add(seven);
         productList.add(eight);
 
+//        List<Product> filteredProductList = new ArrayList<>();
+//        filteredProductList = productList.stream().filter(product -> product.getIngredient() != "nut" && product.getDiscount() == "yes").collect(Collectors.toList());
+//        System.out.println(filteredProductList);
+
         List<Product> filteredProductList = new ArrayList<>();
-        filteredProductList = productList.stream().filter(product -> product.getIngredient() != "nut" && product.getDiscount() == "yes").collect(Collectors.toList());
+        filteredProductList = productList.stream().filter(product -> !product.getIngredient().equals("nut") && product.getDiscount().equals("yes")).collect(Collectors.toList());
         System.out.println(filteredProductList);
 
     }

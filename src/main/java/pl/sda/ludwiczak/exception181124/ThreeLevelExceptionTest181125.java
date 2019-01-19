@@ -30,7 +30,7 @@ public class ThreeLevelExceptionTest181125 {
         try {
             level3();
             System.out.println("level2 - after call to level3");
-//        } catch (Exception e) { // z uwagi na polimorfizm, jakikolwiek exception zostałby "złapany", ewentualnie możemy dać jako ostatni catch
+//        } catch (Exception e) { // z uwagi na polimorfizm, jakikolwiek exc zostałby "złapany", ewentualnie możemy dać jako ostatni catch
 //            e.printStackTrace();
         } catch (MyNewException181125 exc) {
             exc.printStackTrace();
@@ -48,7 +48,7 @@ public class ThreeLevelExceptionTest181125 {
         if (counter % 2 == 5) { // % - reszta z dzielenia
             throw new MyException181124("Problem on level 3");
         } else if (counter == 4) {
-            throw new MyNewException181125("Problem on level 3 - my new exception");
+            throw new MyNewException181125("Problem on level 3 - my new exc");
         }
 
         System.out.println("level3 - before return");
