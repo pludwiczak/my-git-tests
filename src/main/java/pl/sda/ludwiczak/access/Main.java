@@ -11,6 +11,7 @@ public class Main {
 //        System.out.println(me);
         me.secret = "my secret";
         me.secondSecret = "my second secret";
+
     }
 
 }
